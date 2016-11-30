@@ -10,7 +10,8 @@ def home():
     dicty = {'hello':44, 'goodbye':77}
     for key, item in dicty.items():
         random.append(item)
-    return random
+    var = str(random)
+    return var
 
 if __name__ == "__main__":
     app.run()
