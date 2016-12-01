@@ -9,12 +9,14 @@ app= Flask(__name__)
 
 @app.route('/')
 def home():
-    random = []
-    dicty = {'hello':44, 'goodbye':77}
-    for key, item in dicty.items():
-        random.append(item)
-    var = str(random) + "hello"
-    return render_template('index.html')
+    conn = sqlite3.connect('calendar.db')
+    c = conn.cursor()
+    command = "SELECT * FROM calendarevents"
+    c.execute(command)
+    results = c.fetchall()
+    results = results[0][1]
+
+    return results
 
 if __name__ == "__main__":
     app.run()
