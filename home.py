@@ -3,11 +3,11 @@ import sqlite3
 import json
 
 
-app= Flask(__name__)
+app = Flask(__name__)
 
 DATABASE = '/var/www/html/FlaskApps/CalendarApp/calendar.db'
 
-# app.config.from_object(__name__)
+app.config.from_object(__name__)
 
 # def connect_to_database():
 #     return sqlite3.connect(app.config['DATABASE'])
@@ -33,7 +33,7 @@ DATABASE = '/var/www/html/FlaskApps/CalendarApp/calendar.db'
 
 @app.route('/')
 def home():
-    conn = sqlite3.connect(DATABASE)
+    conn = sqlite3.connect(app.config[DATABASE])
     c = conn.cursor()
     # command = "SELECT * FROM calendarevents"
     # c.execute(command)
@@ -43,10 +43,6 @@ def home():
 
     return results
 
-@app.route("/viewdb")
-def viewdb():
-    rows = execute_query("""SELECT * FROM calendarevents""")
-    return '<br>'.join(str(row) for row in rows)
 
 if __name__ == "__main__":
     app.run()
