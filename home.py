@@ -2,7 +2,7 @@ from flask import Flask, g
 import sqlite3
 
 app = Flask(__name__)
-DATABASE = 'dublinbikes_3.db'
+DATABASE = './dublinbikes_3.db'
 
 #Connect to database
 def connect_to_database():
