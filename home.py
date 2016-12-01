@@ -39,7 +39,7 @@ def home():
     # c.execute(command)
     # results = c.fetchall()
     # results = results[0][1]
-    results = "goodbye"
+    results = "fc "
 
     return results
 
