@@ -25,7 +25,7 @@ def close_connection(exception):
 @app.route('/')
 def index():
     conn = get_db()
-    return "Hello"
+    return "Jesus"
 
 
 if __name__ == '__main__':
