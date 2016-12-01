@@ -41,6 +41,7 @@ def execute_query(query, args=()):
 
 @app.route('/')
 def hello_world():
+    rows = execute_query("""SELECT * FROM calendarevents""")
     return 'Hello from Flask!'
 
 if __name__ == '__main__':
