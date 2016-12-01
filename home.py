@@ -9,12 +9,13 @@ app= Flask(__name__)
 
 @app.route('/')
 def home():
-    conn = sqlite3.connect('calendar.db')
-    c = conn.cursor()
-    command = "SELECT * FROM calendarevents"
-    c.execute(command)
-    results = c.fetchall()
-    results = results[0][1]
+    # conn = sqlite3.connect('calendar.db')
+    # c = conn.cursor()
+    # command = "SELECT * FROM calendarevents"
+    # c.execute(command)
+    # results = c.fetchall()
+    # results = results[0][1]
+    results = "hello"
 
     return results
 
