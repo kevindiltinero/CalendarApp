@@ -9,8 +9,8 @@ app= Flask(__name__)
 
 @app.route('/')
 def home():
-    # conn = sqlite3.connect('calendar.db')
-    # c = conn.cursor()
+    conn = sqlite3.connect('calendar.db')
+    c = conn.cursor()
     # command = "SELECT * FROM calendarevents"
     # c.execute(command)
     # results = c.fetchall()
