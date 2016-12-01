@@ -14,7 +14,7 @@ def home():
     for key, item in dicty.items():
         random.append(item)
     var = str(random) + "hello"
-    return var
+    return render_template('index.html')
 
 if __name__ == "__main__":
     app.run()
