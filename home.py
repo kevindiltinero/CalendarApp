@@ -33,7 +33,7 @@ app.config.from_object(__name__)
 
 @app.route('/')
 def home():
-    conn = sqlite3.connect(app.config[DATABASE])
+    conn = sqlite3.connect(DATABASE)
     c = conn.cursor()
     # command = "SELECT * FROM calendarevents"
     # c.execute(command)
